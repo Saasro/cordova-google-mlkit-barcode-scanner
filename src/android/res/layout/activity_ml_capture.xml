@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      tools:context="com.saasro.mlkit.CaptureActivity">
+    <SurfaceView
+      android:id="@+id/overlay"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:background="#66000000"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.camera.view.PreviewView
+      android:id="@+id/previewView"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/overlay"
+      app:layout_constraintVertical_bias="0.0">
+    </androidx.camera.view.PreviewView>
+
+
+  <TextView
+    android:id="@+id/title_tv"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="@dimen/frame_margin_top"
+    android:layout_marginLeft="@dimen/frame_margin"
+    android:layout_marginRight="@dimen/frame_margin"
+    android:layout_marginBottom="@dimen/frame_margin_top"
+    android:background="@color/transparent"
+    android:ellipsize="end"
+    android:gravity="center_horizontal"
+    android:maxLines="2"
+    android:text="Center the QR or barcode in the space below:"
+    android:textColor="@color/status_text"
+    android:textSize="@dimen/fontSize"
+    android:textStyle="bold"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:layout_editor_absoluteX="30dp" />
+
+
+  <ImageButton
+    android:id="@+id/torch_button"
+    android:layout_width="80dp"
+    android:layout_height="40dp"
+    android:layout_margin="20dp"
+    android:background="@drawable/flash_off"
+    app:layout_constraintBottom_toTopOf="@+id/cancel_btn"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent" />
+
+  <ImageButton
+    android:id="@+id/cancel_btn"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginBottom="@dimen/close_btn_margin_bottom"
+    android:background="@drawable/ic_close"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

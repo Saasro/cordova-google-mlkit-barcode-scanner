@@ -1,0 +1,28 @@
+{
+  "name": "cordova-google-mlkit-barcode-scanner",
+  "version": "1.0.0",
+  "description": "Cordova plugin to integrate MLKit Barcode Scanner",
+  "_location": "/cordova-google-mlkit-barcode-scanner",
+  "cordova": {
+    "id": "cordova-google-mlkit-barcode-scanner",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Saasro/cordova-google-mlkit-barcode-scanner.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "author": "Saasro",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/Saasro/cordova-google-mlkit-barcode-scanner/issues"
+  },
+  "homepage": "https://github.com/Saasro/cordova-google-mlkit-barcode-scanner#readme"
+}

@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-google-mlkit-barcode-scanner" version="1.0"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>cordova-google-mlkit-barcode-scanner</name>
+    <js-module name="MLScanner" src="www/MLScanner.js">
+        <clobbers target="cordova.plugins.MLScanner" />
+    </js-module>
+    <!-- iOS -->
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="MLScanner">
+                <param name="ios-package" value="MLScanner" />
+            </feature>
+        </config-file>
+        <source-file src="src/ios/cordova-google-mlkit-barcode-scanner.m" />
+    </platform>
+
+    <!-- Android -->
+    <platform name="android">
+        <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.CAMERA" />
+        </config-file>
+
+        <config-file parent="application" target="app/src/main/AndroidManifest.xml">
+            <activity android:launchMode="singleTop" android:name="com.saasro.mlkit.CaptureActivity" android:theme="@style/FullScreen" />
+        </config-file>
+
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="MLScanner">
+                <param name="android-package" value="com.saasro.mlkit.MLScanner" />
+            </feature>
+        </config-file>
+
+        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+        <source-file src="src/android/src/BeepManager.java" target-dir="src/com/saasro/mlkit" />
+        <source-file src="src/android/src/BitmapUtils.java" target-dir="src/com/saasro/mlkit" />
+        <source-file src="src/android/src/CaptureActivity.java" target-dir="src/com/saasro/mlkit" />
+        <source-file src="src/android/src/FrameMetadata.java" target-dir="src/com/saasro/mlkit" />
+        <source-file src="src/android/src/MLScanner.java" target-dir="src/com/saasro/mlkit" />
+
+        <source-file src="src/android/res/raw/beep.ogg" target-dir="res/raw" />
+        <source-file src="src/android/res/values/ml_scanner.xml" target-dir="res/values" />
+        <source-file src="src/android/res/layout/activity_ml_capture.xml" target-dir="res/layout" />
+
+        <source-file src="src/android/res/drawable-hdpi/flash_off.png" target-dir="res/drawable-hdpi" />
+        <source-file src="src/android/res/drawable-hdpi/flash_on.png" target-dir="res/drawable-hdpi" />
+
+        <source-file src="src/android/res/drawable-xhdpi/flash_off.png" target-dir="res/drawable-xhdpi" />
+        <source-file src="src/android/res/drawable-xhdpi/flash_on.png" target-dir="res/drawable-xhdpi" />
+
+        <source-file src="src/android/res/drawable-xxhdpi/flash_off.png" target-dir="res/drawable-xxhdpi" />
+        <source-file src="src/android/res/drawable-xxhdpi/flash_on.png" target-dir="res/drawable-xxhdpi" />
+        <source-file src="src/android/res/drawable-xxhdpi/ic_close.png" target-dir="res/drawable-xxhdpi" />
+
+        <framework src="com.android.support:support-v4:27.1.0" />
+        <framework src="com.android.support:design:27.1.0" />
+
+        <framework src="com.google.android.gms:play-services-vision:17.0.2" />
+        <framework src="com.google.mlkit:barcode-scanning:16.0.3"/>
+
+        <framework src="androidx.camera:camera-core:1.0.0-beta05"/>
+        <framework src="androidx.camera:camera-camera2:1.0.0-beta05"/>
+        <framework src="androidx.camera:camera-lifecycle:1.0.0-beta05"/>
+        <framework src="androidx.camera:camera-view:1.0.0-alpha12"/>
+        <framework src="androidx.constraintlayout:constraintlayout:2.0.4"/>
+
+        
+    </platform>
+</plugin>
