@@ -92,7 +92,7 @@ MLScanner.prototype.scan = function (params, success, failure){
           cancelled: data.cancelled,
           text: data.text,
           format: getBarcodeFormat(data.format),
-          type: getBarcodeType(data.)
+          type: getBarcodeType(data.type)
         });
       }, (err) => {
         switch (err[0]) {
