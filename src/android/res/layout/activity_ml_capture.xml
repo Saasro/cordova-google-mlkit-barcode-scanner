@@ -16,18 +16,17 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.camera.view.PreviewView
-      android:id="@+id/previewView"
-      android:layout_width="0dp"
-      android:layout_height="0dp"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.0"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="@+id/overlay"
-      app:layout_constraintVertical_bias="0.0">
-    </androidx.camera.view.PreviewView>
 
+  <androidx.camera.view.PreviewView
+    android:id="@+id/previewView"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/overlay"
+    app:layout_constraintVertical_bias="1.0"></androidx.camera.view.PreviewView>
 
   <TextView
     android:id="@+id/title_tv"
@@ -35,27 +34,27 @@
     android:layout_height="wrap_content"
     android:layout_centerHorizontal="true"
     android:layout_gravity="center_horizontal"
-    android:layout_marginTop="@dimen/frame_margin_top"
-    android:layout_marginLeft="@dimen/frame_margin"
-    android:layout_marginRight="@dimen/frame_margin"
-    android:layout_marginBottom="@dimen/frame_margin_top"
+    android:layout_marginTop="@dimen/title_margin_top"
+    android:layout_marginLeft="@dimen/title_margin_left"
+    android:layout_marginRight="@dimen/title_margin_right"
+    android:layout_marginBottom="@dimen/title_margin_bottom"
     android:background="@color/transparent"
     android:ellipsize="end"
     android:gravity="center_horizontal"
     android:maxLines="2"
     android:text="Center the QR or barcode in the space below:"
     android:textColor="@color/status_text"
-    android:textSize="@dimen/fontSize"
+    android:textSize="@dimen/barcode_title_fontSize"
     android:textStyle="bold"
-    app:layout_constraintTop_toTopOf="parent"
-    tools:layout_editor_absoluteX="30dp" />
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
 
 
   <ImageButton
     android:id="@+id/torch_button"
-    android:layout_width="80dp"
-    android:layout_height="40dp"
-    android:layout_margin="20dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/close_btn_margin_bottom"
     android:background="@drawable/flash_off"
     app:layout_constraintBottom_toTopOf="@+id/cancel_btn"
     app:layout_constraintEnd_toEndOf="parent"
@@ -68,6 +67,7 @@
     android:layout_alignParentBottom="true"
     android:layout_centerHorizontal="true"
     android:layout_marginBottom="@dimen/close_btn_margin_bottom"
+    android:layout_marginTop="@dimen/close_btn_margin_bottom"
     android:background="@drawable/ic_close"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"

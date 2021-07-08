@@ -26,7 +26,7 @@
 
     private static final String LOG_TAG ="MLSCANNER";
     private static final int ML_SCANNER_CODE = 10001;
-    private static final String SCAN = "scan";
+    private static final String SCAN = "startScan";
     private CallbackContext callbackContext;
 
     private String [] permissions = { Manifest.permission.CAMERA };

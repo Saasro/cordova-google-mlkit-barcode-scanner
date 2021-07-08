@@ -7,19 +7,50 @@
         <clobbers target="cordova.plugins.MLScanner" />
     </js-module>
     <!-- iOS -->
-    <platform name="ios">
+      <platform name="ios">
         <config-file parent="/*" target="config.xml">
             <feature name="MLScanner">
-                <param name="ios-package" value="MLScanner" />
+                <param name="ios-package" value="CDViOSScanner"/>
             </feature>
         </config-file>
-        <source-file src="src/ios/cordova-google-mlkit-barcode-scanner.m" />
+        <framework src="Foundation.framework"/>
+        <framework src="AVFoundation.framework"/>
+        <framework src="UIKit.framework"/>
+        <podspec>
+            <config>
+                <source url="https://cdn.cocoapods.org/"/>
+            </config>
+            <pods use-frameworks="true">
+                <pod name="GoogleMLKit/BarcodeScanning"/>
+            </pods>
+        </podspec>
+        <header-file src="src/ios/src/CDViOSScanner.h"/>
+        <source-file src="src/ios/src/CDViOSScanner.m"/>
+        <header-file src="src/ios/src/CameraViewController.h"/>
+        <source-file src="src/ios/src/CameraViewController.m"/>
+
+        <resource-file src="src/ios/res/closecamera.png" target-dir="src/ios/images"/>
+        <resource-file src="src/ios/res/closecamera@2x.png" target-dir="src/ios/images"/>
+        <resource-file src="src/ios/res/closecamera@3x.png" target-dir="src/ios/images"/>
+
+        <resource-file src="src/ios/res/off-notxt.png" target-dir="src/ios/images"/>
+        <resource-file src="src/ios/res/off-notxt@2x.png" target-dir="src/ios/images"/>
+        <resource-file src="src/ios/res/off-notxt@3x.png" target-dir="src/ios/images"/>
+        
+        <resource-file src="src/ios/res/on-notxt.png" target-dir="src/ios/images"/>
+        <resource-file src="src/ios/res/on-notxt@2x.png" target-dir="src/ios/images"/>
+        <resource-file src="src/ios/res/on-notxt@3x.png" target-dir="src/ios/images"/>
+        
+
     </platform>
 
     <!-- Android -->
     <platform name="android">
-        <config-file parent="/*" target="AndroidManifest.xml">
+        <config-file target="AndroidManifest.xml" parent="/*">
             <uses-permission android:name="android.permission.CAMERA" />
+            <uses-permission android:name="android.permission.FLASHLIGHT"/>
+            <uses-permission android:name="android.permission.VIBRATE"/>
+            <uses-feature android:name="android.hardware.camera" android:required="true"/>
         </config-file>
 
         <config-file parent="application" target="app/src/main/AndroidManifest.xml">

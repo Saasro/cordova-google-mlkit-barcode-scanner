@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-  <dimen name="fontSize">20sp</dimen>
-  <dimen name="frame_margin">35dp</dimen>
-  <dimen name="frame_margin_land">100dp</dimen>
-  <dimen name="frame_margin_top">100dp</dimen>
+  <dimen name="barcode_title_fontSize">20sp</dimen>
+  <dimen name="frame_margin">60dp</dimen>
+  <dimen name="title_margin_left">30dp</dimen>
+  <dimen name="title_margin_right">30dp</dimen>
+  <dimen name="title_margin_top">75dp</dimen>
+  <dimen name="title_margin_bottom">60dp</dimen>
+  <dimen name="frame_margin_top">60dp</dimen>
   <dimen name="frame_margin_top_land">20dp</dimen>
   <dimen name="frame_size">207dp</dimen>
   <dimen name="frame_size_land">160dp</dimen>
-  <dimen name="close_btn_margin_bottom">30dp</dimen>
+  <dimen name="close_btn_margin_bottom">30dp</dimen>\
 
   <color name="status_text">#ffffffff</color>
   <color name="transparent">#00000000</color>
@@ -18,5 +21,6 @@
     <item name="android:windowFullscreen">true</item>
   </style>
 
+  <bool name="isTablet">false</bool>
 
 </resources>
